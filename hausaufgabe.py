@@ -13,7 +13,7 @@ while True:
         break
     elif eingabe == "alter":
         for i in data:
-            if i["age"] > 25:
+            if i["age"] >= 25:
                 printf(i["name"], i["age"])    
     elif eingabe == "kontostand":
         money = []
