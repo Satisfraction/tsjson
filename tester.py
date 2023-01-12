@@ -1,19 +1,20 @@
 import json
 
-with open('tsjson/accounts.json', 'r') as f:
-    data = json.load(f)
+with open('tsjson/accounts.json', 'r') as accounts:
+    data = json.load(accounts)
   
 print(data)
 
+
 while True:
-    eingabe = (input("Bitte gib alter oder kontostand ein:\nq um abzubrechen.\n"))
-    if eingabe == "q":
+    eingabe = (input("Bitte gib alter oder kontostand ein:\nquit um abzubrechen.\n"))
+    if eingabe == "quit":
         print("Bis zum nächsten mal...")
         break
     elif eingabe == "alter":
         for i in data:
             if i["age"] > 25:
-                print(i["name"],i["age"])    
+                printf(i["name"], i["age"])    
     elif eingabe == "kontostand":
         money = []
         for i in data: 
@@ -22,8 +23,8 @@ while True:
         for number in money:
             if number > highest:
                 highest = number
-        print(highest)
+        print(i["name"], highest)
     else:
         print("falsche Eingabe, versuche es erneut!")
-
+        
 data.close()
